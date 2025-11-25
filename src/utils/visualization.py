@@ -238,7 +238,7 @@ def animate_pendulum(
 
     def init():
         """Initialize animation."""
-        cart.set_xy((0 - cart_width / 2, -cart_height / 2))
+        cart.set_bounds(0 - cart_width / 2, -cart_height / 2, cart_width, cart_height)
         pole.set_data([], [])
         pivot.center = (0, 0)
         time_text.set_text('')
@@ -251,7 +251,7 @@ def animate_pendulum(
         theta = states[frame, 2]
 
         # Update cart position
-        cart.set_xy((x - cart_width / 2, -cart_height / 2))
+        cart.set_bounds(x - cart_width / 2, -cart_height / 2, cart_width, cart_height)
 
         # Update pivot
         pivot.center = (x, 0)
